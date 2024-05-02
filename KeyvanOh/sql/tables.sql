@@ -100,17 +100,128 @@ create table t_goods (
     state number(1),
     exchange number(1),
     price number(10),
-    delivery_fee number(4)
-    //content varchar2(4000)
-    //count number(3),
-    //heart number(19),
-    //view number(19),
-    //writeday date,
-    //user_id varchar2(14),
-    //sale_state number(1)
+    delivery_fee number(4),
+    goods_content varchar2(4000),
+    count number(3),
+    heart number(19),
+    hits number(19),
+    writeday date,
+    user_id varchar2(14),
+    sale_state number(1),
+    constraint FK_UserGoods foreign key (user_id) references t_users(user_id),
+    constraint FK_CategoryGoods foreign key (category_id) references t_categories(category_id),
+    constraint FK_CategorydesGoods foreign key (category_de_id) references t_category_des(category_de_id),
+    constraint FK_CategorydedesGoods foreign key (category_de_de_id) references t_category_de_des(category_de_de_id)
 );
 
 commit;
+
+
+
+
+desc t_reviews;
+select * from t_reviews;
+drop table t_reviews;
+create table t_reviews (
+    review_id number(19) primary key,
+    user_id varchar2(14),
+    goods_id number(19),
+    star number(1),
+    review_content varchar2(1000),
+    writeday date,
+    constraint FK_UserReviews foreign key (user_id) references t_users(user_id),
+    constraint FK_GoodsReviews foreign key (goods_id) references t_goods(goods_id)
+);
+
+commit;
+
+
+
+
+
+desc t_alarm;
+select * from t_alarm;
+drop table t_alarm;
+create table t_alarm (
+    alarm_id number(19) primary key,
+    alarm_content varchar2(1000),
+    writeday date,
+    goods_id number(19),
+    user_id varchar2(14),
+    constraint FK_UserAlarm foreign key (user_id) references t_users(user_id),
+    constraint FK_GoodsAlarm foreign key (goods_id) references t_goods(goods_id)
+);
+
+commit;
+
+
+
+desc t_heart_goods;
+select * from t_heart_goods;
+drop table t_heart_goods;
+create table t_heart_goods (
+    heart_id number(19) primary key,
+    goods_id number(19),
+    user_id varchar2(14),
+    constraint FK_UserHeart foreign key (user_id) references t_users(user_id),
+    constraint FK_GoodsHeart foreign key (goods_id) references t_goods(goods_id)
+);
+
+commit;
+
+
+
+desc t_questions;
+select * from t_questions;
+drop table t_questions;
+create table t_questions (
+    question_id number(19) primary key,
+    user_id varchar2(14),
+    question_content varchar2(4000),
+    goods_id number(19),
+    writeday date,
+    constraint FK_UserQuestion foreign key (user_id) references t_users(user_id),
+    constraint FK_GoodsQuestion foreign key (goods_id) references t_goods(goods_id)
+);
+
+commit;
+
+
+
+
+
+desc t_question_comments;
+select * from t_question_comments;
+drop table t_question_comments;
+create table t_question_comments (
+    question_comment_id number(19) primary key,
+    user_id varchar2(14),
+    question_id number(19),
+    question_comment_content varchar2(1000),
+    writeday date,
+    constraint FK_QuestionQuestioncomments foreign key (question_id) references t_questions(question_id),
+    constraint FK_UserQuestioncomments foreign key (user_id) references t_users(user_id)
+);
+
+commit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
