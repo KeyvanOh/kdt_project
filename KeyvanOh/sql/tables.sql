@@ -210,6 +210,106 @@ commit;
 
 
 
+desc t_review_comments;
+select * from t_review_comments;
+drop table t_review_comments;
+create table t_review_comments (
+    review_comment_id number(19) primary key,
+    user_id varchar2(14),
+    review_id number(19),
+    review_comment_content varchar2(1000),
+    writeday date,
+    constraint FK_ReviewReviewcomments foreign key (review_id) references t_reviews(review_id),
+    constraint FK_UserReviewcomments foreign key (user_id) references t_users(user_id)
+);
+
+commit;
+
+
+
+
+
+
+desc t_images;
+select * from t_images;
+drop table t_images;
+create table t_images (
+    image_id number(19) primary key,
+    image_src varchar2(1000)
+);
+
+commit;
+
+
+
+
+
+desc t_goods_images;
+select * from t_goods_images;
+drop table t_goods_images;
+create table t_goods_images (
+    goods_image_id number(19) primary key,
+    image_id number(19),
+    goods_id number(19),
+    image_order number(19),
+    constraint FK_GoodsGoodsimage foreign key (goods_id) references t_goods(goods_id),
+    constraint FK_ImageGoodsimage foreign key (image_id) references t_images(image_id)
+);
+
+commit;
+
+
+
+
+
+desc t_notice;
+select * from t_notice;
+drop table t_notice;
+create table t_notice (
+    notice_id number(19) primary key,
+    notice_title varchar2(100),
+    notice_content varchar2(4000),
+    writeday date,
+    image_id number(19),
+    constraint FK_ImageNotice foreign key (image_id) references t_images(image_id)
+);
+
+commit;
+
+
+
+
+
+
+desc t_advertisements;
+select * from t_advertisements;
+drop table t_advertisements;
+create table t_advertisements (
+    advertisement_id number(19) primary key,
+    advertisement_title varchar2(100),
+    image_id number(19),
+    constraint FK_ImageAdvertisement foreign key (image_id) references t_images(image_id)
+);
+
+commit;
+
+
+
+
+
+
+
+desc t_tags;
+select * from t_tags;
+drop table t_tags;
+create table t_tags (
+    tag_id number(19) primary key,
+    tag_name varchar2(100),
+    goods_id number(19),
+    constraint FK_GoodsTag foreign key (goods_id) references t_goods(goods_id)
+);
+
+commit;
 
 
 
@@ -218,26 +318,28 @@ commit;
 
 
 
+desc t_to_do_list;
+select * from t_to_do_list;
+drop table t_to_do_list;
+create table t_to_do_list (
+    todo_id number(19) primary key,
+    state number(1),
+    todo_content varchar2(4000)
+);
+
+commit;
 
 
 
 
 
 
+desc t_address;
+select * from t_address;
+drop table t_address;
+create table t_address (
+    address_id number(19) primary key,
+    juso varchar2(1000)
+);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+commit;
