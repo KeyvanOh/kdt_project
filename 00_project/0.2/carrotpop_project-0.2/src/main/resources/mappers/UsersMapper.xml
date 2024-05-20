@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kdt.carrotpop.ex.mapper.UsersMapper">
+    <select id="getUser" resultType="com.kdt.carrotpop.ex.vo.UsersVO">
+        <![CDATA[
+        	select * from users where userid = #{userid}
+        ]]>
+    </select>
+    <select id="getUserAuthority" resultType="com.kdt.carrotpop.ex.vo.CppGrantedAuthority">
+        <![CDATA[
+        	select users.userid, users.password, authority.role from users, authority where users.userid = authority.userid and users.userid = #{userid} order by authority.role desc
+        ]]>
+    </select>
+    
+    
+    
+
+    <insert id="insertUser">
+        <![CDATA[
+			insert into users values (
+			    #{userid},
+			    #{password},
+			    #{nickname},
+			    #{postcode},
+			    #{address},
+			    #{addressmore}
+			)
+		]]>
+    </insert>
+    <insert id="insertAuthority">
+        <![CDATA[
+			insert into authority values (
+			    #{userid},
+			    #{role}
+			)
+		]]>
+    </insert>
+    
+    
+    <select id="selectAuthorityList" resultType="com.kdt.carrotpop.ex.vo.AuthorityVO">
+        <![CDATA[
+        	select * from authority where userid = #{userid}
+        ]]>
+    </select>    
+    
+</mapper>
