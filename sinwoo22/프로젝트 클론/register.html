@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .register-form input[type="text"],
+        .register-form input[type="password"] {
+            width: 100%; 
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+        }
+
+        .register-form .address-fields {
+            display: flex;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .register-form .address-fields input[type="text"] {
+            flex: 1; 
+            margin-right: 10px; 
+        }
+
+        .register-form input[type="submit"] {
+            width: 50%; 
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .register-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>회원가입</h2>
+        <form class="register-form" action="#" method="POST">
+            <input type="text" name="nickname" placeholder="닉네임" required>
+            <input type="text" name="username" placeholder="아이디" required>
+            <input type="password" name="password" placeholder="비밀번호" required>
+            <input type="password" name="confirm_password" placeholder="비밀번호 확인" required>
+            <div class="address-fields">
+                
+                <input type="text" name="address" placeholder="주소" required>
+                <input type="text" name="detail_address" placeholder="세부주소">
+            </div>
+            <input type="text" name="zip_code" placeholder="우편번호" required>           
+            <input type="submit" value="가입하기">
+        </form>
+    </div>
+</body>
+</html>
