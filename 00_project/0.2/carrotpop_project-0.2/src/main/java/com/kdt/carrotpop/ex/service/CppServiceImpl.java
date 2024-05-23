@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kdt.carrotpop.ex.mapper.UsersMapper;
 import com.kdt.carrotpop.ex.vo.AuthorityVO;
+import com.kdt.carrotpop.ex.vo.ItemVO;
+import com.kdt.carrotpop.ex.vo.ItemcategoryVO;
 import com.kdt.carrotpop.ex.vo.UsersVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -44,8 +46,28 @@ public class CppServiceImpl implements CppService {
 
 	@Override
 	public List<AuthorityVO> getListWithUserid(String userid) {
+		log.info("getListWithUserid()..");
 		// System.out.println(usersMapper.selectAuthorityList("jk3"));
 		return usersMapper.selectAuthorityList(userid);
+	}
+
+	@Override
+	public List<ItemcategoryVO> getItemcategoryList() {
+		log.info("getItemcategoryList()..");
+		// return null;
+		return usersMapper.selectItemcategoryList();
+	}
+
+	@Override
+	public void uploadGoods(ItemVO item) {
+		log.info("uploadGoods()..");
+		usersMapper.insertItem(item);
+	}
+
+	@Override
+	public long getLatestItemid() {
+		log.info("getLatestItemid()..");
+		return usersMapper.selectItemidMax();
 	}
 
 }

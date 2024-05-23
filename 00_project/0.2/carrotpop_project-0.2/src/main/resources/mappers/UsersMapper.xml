@@ -43,6 +43,59 @@
         <![CDATA[
         	select * from authority where userid = #{userid}
         ]]>
+    </select>
+    
+    
+    <select id="selectItemcategoryList" resultType="com.kdt.carrotpop.ex.vo.ItemcategoryVO">
+        <![CDATA[
+        	select * from itemcategory
+        ]]>
     </select>    
+    
+<!--     
+ITEMID         NOT NULL NUMBER(19)     
+SELLERID       NOT NULL VARCHAR2(14)   
+TITLE          NOT NULL VARCHAR2(100)  
+PRICE          NOT NULL NUMBER(10)     
+CATEGORYNUMBER NOT NULL NUMBER(2)      
+UPLOADTIME     NOT NULL DATE           
+CONTENT        NOT NULL VARCHAR2(4000) 
+HIT            NOT NULL NUMBER(19)    
+-->  
+
+    <insert id="insertItem">
+        <![CDATA[
+			INSERT INTO item VALUES (
+			    item_sequence.nextval,
+			    #{sellerid},
+			    #{title},
+			    #{price},
+			    #{categorynumber},
+			    sysdate,
+			    #{content},
+			    0,
+			    #{howmanyimgs}
+			)
+		]]>
+    </insert>
+<!-- 
+ITEMID     NOT NULL NUMBER(19) 
+ORDERINDEX NOT NULL NUMBER(2)      
+-->
+<!--     <insert id="insertPicture">
+        <![CDATA[
+			INSERT INTO picture VALUES (
+			    item_sequence.currval,
+			    #{orderindex}
+			)
+		]]>
+    </insert> -->
+    
+    <select id="selectItemidMax" resultType="java.lang.Long">
+        <![CDATA[
+        	select max(itemid) from item
+        ]]>
+    </select>    
+    
     
 </mapper>

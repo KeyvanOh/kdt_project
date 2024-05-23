@@ -18,7 +18,7 @@ let usersInfo = function() {
 		},
 		async: false,
 		success: function(result, status) {
-			console.log(result);
+			//console.log(result);
 			userid = result;
 		},
 	});
@@ -80,5 +80,3 @@ let tryLogin = function() {
 		},
 	});
 };
-
-
