@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.kdt.carrotpop.ex.vo.AuthorityVO;
+import com.kdt.carrotpop.ex.vo.ItemVO;
 import com.kdt.carrotpop.ex.vo.UsersVO;
 
 import lombok.extern.slf4j.Slf4j;
@@ -46,11 +47,54 @@ class UsersMapperTest {
 		System.out.println(usersMapper.selectAuthorityList("jk3"));
 		System.out.println(usersMapper.selectAuthorityList("jk3").size());
 	}
-	
-	
-	
-	
-	
+
+	@Disabled
+	@Test
+	void testSelectItemcategoryList() {
+		usersMapper.selectItemcategoryList();
+	}
+
+	@Test
+	void testInsertItem() {
+		ItemVO item = new ItemVO();
+		/*
+		INSERT INTO item VALUES (
+		    item_sequence.nextval,
+		    #{sellerid},
+		    #{title},
+		    #{price},
+		    #{categorynumber},
+		    sysdate,
+		    #{content},
+		    0
+		)
+		*/
+		
+		String sellerid = "jk";
+		String title = "팔게요";
+		int price = 2000;
+		int categorynumber = 19;
+		String content = "이거 좋은 겁니다 싸게 팝니다.";
+		
+		item.setSellerid(sellerid);
+		item.setTitle(title);
+		item.setPrice(price);
+		item.setCategorynumber(categorynumber);
+		item.setContent(content);
+		item.setHowmanyimgs(2);
+		
+		usersMapper.insertItem(item);
+		
+		/*
+		PictureVO picture = new PictureVO();
+		
+		for (int i = 0; i < 3; i++) {
+			picture.setOrderindex(i);
+			usersMapper.insertPicture(picture);
+		};
+		*/
+		
+	}
 	
 
 }
