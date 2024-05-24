@@ -5,11 +5,21 @@ drop table item;
 drop table authority;
 drop table users;
 drop table itemcategory;
+drop table cppaddress;
 
 drop sequence item_sequence;
+drop sequence address_sequence;
 
+create sequence address_sequence start with 1 increment by 1;
 create sequence item_sequence start with 1 increment by 1;
 
+create table cppaddress(
+    addressid number(19) not null,
+    jiyeok varchar2(30) not null,
+    dongne varchar2(30) not null,
+    dong varchar2(30) not null,
+    constraint PK_Cppaddress primary key (addressid)
+);
 create table itemcategory(
     itemcategoryid number(2) not null,
     itemcategoryname varchar2(20) not null,
@@ -102,6 +112,8 @@ create table users (
     postcode varchar2(7) not null,
     address varchar2(300) not null,
     addressmore varchar2(300) not null,
+    addressid number(19) not null,
+    constraint FK_CppaddressUser foreign key (addressid) references cppaddress(addressid),
     constraint PK_User primary key (userid)
 );
 create table authority (
