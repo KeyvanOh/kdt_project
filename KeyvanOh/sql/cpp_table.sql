@@ -15,6 +15,86 @@ create table itemcategory(
     itemcategoryname varchar2(20) not null,
     constraint PK_Itemcategory primary key (itemcategoryid)
 );
+insert into itemcategory values (
+    1,
+    '디지털기기'
+);
+insert into itemcategory values (
+    2,
+    '가구/인테리어'
+);
+insert into itemcategory values (
+    3,
+    '유아동'
+);
+insert into itemcategory values (
+    4,
+    '여성의류'
+);
+insert into itemcategory values (
+    5,
+    '여성잡화'
+);
+insert into itemcategory values (
+    6,
+    '남성패션/잡화'
+);
+insert into itemcategory values (
+    7,
+    '생활가전'
+);
+insert into itemcategory values (
+    8,
+    '생활/주방'
+);
+insert into itemcategory values (
+    9,
+    '스포츠/레저'
+);
+insert into itemcategory values (
+    10,
+    '취미/게임/음반'
+);
+insert into itemcategory values (
+    11,
+    '뷰티/미용'
+);
+insert into itemcategory values (
+    12,
+    '식물'
+);
+insert into itemcategory values (
+    13,
+    '가공식품'
+);
+insert into itemcategory values (
+    14,
+    '건강기능식품'
+);
+insert into itemcategory values (
+    15,
+    '반려동물용품'
+);
+insert into itemcategory values (
+    16,
+    '티켓/교환권'
+);
+insert into itemcategory values (
+    17,
+    '도서'
+);
+insert into itemcategory values (
+    18,
+    '유아도서'
+);
+insert into itemcategory values (
+    19,
+    '기타 중고물품'
+);
+insert into itemcategory values (
+    20,
+    '삽니다'
+);
 create table users (
     userid varchar2(14) not null,
     password varchar2(60) not null,
