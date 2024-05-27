@@ -30,4 +30,5 @@ CREATE TABLE address (
     lotnumber2 varchar2(4) not null,
     constraint PK_Address primary key (buildingnumberm)
 );
+
 commit;
