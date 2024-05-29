@@ -23,10 +23,10 @@ create table temp (
     keyword varchar2(60)
 );
 insert into temp (
-    select BUILDING from address where BUILDING = LI group by BUILDING
+    select BUILDING from address2 where BUILDING = LI group by BUILDING
 );
 insert into otheraddress (
-    SELECT ZIP, SIDO, SIGUNGU, EUMMYEON, DORO, ISJIHA, BUILDINGNUMBER1, BUILDINGNUMBER2, BUILDINGNUMBERM, BUILDING, DONGLAW, LI, DONG, LOTNUMBER1, LOTNUMBER2 FROM address where (
+    SELECT * FROM address2 where (
         BUILDING in (select keyword from temp) or
         LI in (select keyword from temp)
     )
@@ -37,10 +37,10 @@ create table temp (
     keyword varchar2(60)
 );
 insert into temp (
-    select DORO from address where DORO = BUILDING group by DORO
+    select DORO from address2 where DORO = BUILDING group by DORO
 );
 insert into otheraddress (
-    SELECT ZIP, SIDO, SIGUNGU, EUMMYEON, DORO, ISJIHA, BUILDINGNUMBER1, BUILDINGNUMBER2, BUILDINGNUMBERM, BUILDING, DONGLAW, LI, DONG, LOTNUMBER1, LOTNUMBER2 FROM address where (
+    SELECT * FROM address2 where (
         DORO in (select keyword from temp) or
         BUILDING in (select keyword from temp)
     )
@@ -51,10 +51,10 @@ create table temp (
     keyword varchar2(60)
 );
 insert into temp (
-    select DORO from address where DORO = DONGLAW group by DORO
+    select DORO from address2 where DORO = DONGLAW group by DORO
 );
 insert into otheraddress (
-    SELECT ZIP, SIDO, SIGUNGU, EUMMYEON, DORO, ISJIHA, BUILDINGNUMBER1, BUILDINGNUMBER2, BUILDINGNUMBERM, BUILDING, DONGLAW, LI, DONG, LOTNUMBER1, LOTNUMBER2 FROM address where (
+    SELECT * FROM address2 where (
         DORO in (select keyword from temp) or
         DONGLAW in (select keyword from temp)
     )
@@ -65,10 +65,10 @@ create table temp (
     keyword varchar2(60)
 );
 insert into temp (
-    select BUILDING from address where BUILDING = DONGLAW group by BUILDING
+    select BUILDING from address2 where BUILDING = DONGLAW group by BUILDING
 );
 insert into otheraddress (
-    SELECT ZIP, SIDO, SIGUNGU, EUMMYEON, DORO, ISJIHA, BUILDINGNUMBER1, BUILDINGNUMBER2, BUILDINGNUMBERM, BUILDING, DONGLAW, LI, DONG, LOTNUMBER1, LOTNUMBER2 FROM address where (
+    SELECT * FROM address2 where (
         BUILDING in (select keyword from temp) or
         DONGLAW in (select keyword from temp)
     )
