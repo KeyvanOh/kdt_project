@@ -163,32 +163,32 @@ CREATE TABLE addresskeyword (
 );
 
 
-drop table otheraddress;
+drop table a00otheraddress;
 
-drop table sigunguaddress;
-drop table eummyeonaddress;
-drop table donglawaddress;
-drop table liaddress;
-drop table doroaddress;
-drop table buildingaddress;
+drop table a01sigunguaddress;
+drop table a02eummyeonaddress;
+drop table a05donglawaddress;
+drop table a06liaddress;
+drop table a03doroaddress;
+drop table a04buildingaddress;
 
-drop table gyeonggi;
-drop table gyeongsangbuk;
-drop table gyeongsangnam;
-drop table jeollanam;
-drop table chungcheongnam;
-drop table seoul;
-drop table jeonbuk;
-drop table gangwon;
-drop table chungcheongbuk;
-drop table busan;
-drop table daegu;
-drop table incheon;
-drop table jeju;
-drop table gwangju;
-drop table daejeon;
-drop table ulsan;
-drop table sejong;
+drop table a26gyeonggi;
+drop table a25gyeongsangbuk;
+drop table a24gyeongsangnam;
+drop table a23jeollanam;
+drop table a22chungcheongnam;
+drop table a21seoul;
+drop table a20jeonbuk;
+drop table a19gangwon;
+drop table a18chungcheongbuk;
+drop table a17busan;
+drop table a16daegu;
+drop table a15incheon;
+drop table a14jeju;
+drop table a13gwangju;
+drop table a12daejeon;
+drop table a11ulsan;
+drop table a10sejong;
 
 
 drop table sidos;
@@ -267,7 +267,7 @@ INSERT INTO sidos VALUES (
 );
 
 
-CREATE TABLE gyeonggi (
+CREATE TABLE a26gyeonggi (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -283,13 +283,13 @@ CREATE TABLE gyeonggi (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Gyeonggi primary key (ADDRESSID)
+    constraint PK_a26gyeonggi primary key (ADDRESSID)
 );
-insert into gyeonggi (
+insert into a26gyeonggi (
     SELECT * FROM address2 where SIDO = '경기도'
 );
 
-CREATE TABLE gyeongsangbuk (
+CREATE TABLE a25gyeongsangbuk (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -305,13 +305,13 @@ CREATE TABLE gyeongsangbuk (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Gyeongsangbuk primary key (ADDRESSID)
+    constraint PK_a25gyeongsangbuk primary key (ADDRESSID)
 );
-insert into gyeongsangbuk (
+insert into a25gyeongsangbuk (
     SELECT * FROM address2 where SIDO = '경상북도'
 );
 
-CREATE TABLE gyeongsangnam (
+CREATE TABLE a24gyeongsangnam (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -327,13 +327,13 @@ CREATE TABLE gyeongsangnam (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Gyeongsangnam primary key (ADDRESSID)
+    constraint PK_a24gyeongsangnam primary key (ADDRESSID)
 );
-insert into gyeongsangnam (
+insert into a24gyeongsangnam (
     SELECT * FROM address2 where SIDO = '경상남도'
 );
 
-CREATE TABLE jeollanam (
+CREATE TABLE a23jeollanam (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -349,13 +349,13 @@ CREATE TABLE jeollanam (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Jeollanam primary key (ADDRESSID)
+    constraint PK_a23jeollanam primary key (ADDRESSID)
 );
-insert into jeollanam (
+insert into a23jeollanam (
     SELECT * FROM address2 where SIDO = '전라남도'
 );
 
-CREATE TABLE chungcheongnam (
+CREATE TABLE a22chungcheongnam (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -371,13 +371,13 @@ CREATE TABLE chungcheongnam (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_chungCheongnam primary key (ADDRESSID)
+    constraint PK_a22chungcheongnam primary key (ADDRESSID)
 );
-insert into chungcheongnam (
+insert into a22chungcheongnam (
     SELECT * FROM address2 where SIDO = '충청남도'
 );
 
-CREATE TABLE seoul (
+CREATE TABLE a21seoul (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -393,13 +393,13 @@ CREATE TABLE seoul (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Seoul primary key (ADDRESSID)
+    constraint PK_a21seoul primary key (ADDRESSID)
 );
-insert into seoul (
+insert into a21seoul (
     SELECT * FROM address2 where SIDO = '충청남도'
 );
 
-CREATE TABLE jeonbuk (
+CREATE TABLE a20jeonbuk (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -415,13 +415,13 @@ CREATE TABLE jeonbuk (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Jeonbuk primary key (ADDRESSID)
+    constraint PK_a20jeonbuk primary key (ADDRESSID)
 );
-insert into jeonbuk (
+insert into a20jeonbuk (
     SELECT * FROM address2 where SIDO = '전북특별자치도'
 );
 
-CREATE TABLE gangwon (
+CREATE TABLE a19gangwon (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -437,13 +437,13 @@ CREATE TABLE gangwon (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Gangwon primary key (ADDRESSID)
+    constraint PK_a19gangwon primary key (ADDRESSID)
 );
-insert into gangwon (
+insert into a19gangwon (
     SELECT * FROM address2 where SIDO = '강원특별자치도'
 );
 
-CREATE TABLE chungcheongbuk (
+CREATE TABLE a18chungcheongbuk (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -459,13 +459,13 @@ CREATE TABLE chungcheongbuk (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Chungcheongbuk primary key (ADDRESSID)
+    constraint PK_a18chungcheongbuk primary key (ADDRESSID)
 );
-insert into chungcheongbuk (
+insert into a18chungcheongbuk (
     SELECT * FROM address2 where SIDO = '충청북도'
 );
 
-CREATE TABLE busan (
+CREATE TABLE a17busan (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -481,13 +481,13 @@ CREATE TABLE busan (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Busan primary key (ADDRESSID)
+    constraint PK_a17busan primary key (ADDRESSID)
 );
-insert into busan (
+insert into a17busan (
     SELECT * FROM address2 where SIDO = '부산광역시'
 );
 
-CREATE TABLE daegu (
+CREATE TABLE a16daegu (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -503,13 +503,13 @@ CREATE TABLE daegu (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Daegu primary key (ADDRESSID)
+    constraint PK_a16daegu primary key (ADDRESSID)
 );
-insert into daegu (
+insert into a16daegu (
     SELECT * FROM address2 where SIDO = '대구광역시'
 );
 
-CREATE TABLE incheon (
+CREATE TABLE a15incheon (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -525,13 +525,13 @@ CREATE TABLE incheon (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Incheon primary key (ADDRESSID)
+    constraint PK_a15incheon primary key (ADDRESSID)
 );
-insert into incheon (
+insert into a15incheon (
     SELECT * FROM address2 where SIDO = '인천광역시'
 );
 
-CREATE TABLE jeju (
+CREATE TABLE a14jeju (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -547,13 +547,13 @@ CREATE TABLE jeju (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Jeju primary key (ADDRESSID)
+    constraint PK_a14jeju primary key (ADDRESSID)
 );
-insert into jeju (
+insert into a14jeju (
     SELECT * FROM address2 where SIDO = '제주특별자치도'
 );
 
-CREATE TABLE gwangju (
+CREATE TABLE a13gwangju (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -569,13 +569,13 @@ CREATE TABLE gwangju (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Gwangju primary key (ADDRESSID)
+    constraint PK_a13gwangju primary key (ADDRESSID)
 );
-insert into gwangju (
+insert into a13gwangju (
     SELECT * FROM address2 where SIDO = '광주광역시'
 );
 
-CREATE TABLE daejeon (
+CREATE TABLE a12daejeon (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -591,13 +591,13 @@ CREATE TABLE daejeon (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Daejeon primary key (ADDRESSID)
+    constraint PK_a12daejeon primary key (ADDRESSID)
 );
-insert into daejeon (
+insert into a12daejeon (
     SELECT * FROM address2 where SIDO = '대전광역시'
 );
 
-CREATE TABLE ulsan (
+CREATE TABLE a11ulsan (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -613,13 +613,13 @@ CREATE TABLE ulsan (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Ulsan primary key (ADDRESSID)
+    constraint PK_a11ulsan primary key (ADDRESSID)
 );
-insert into ulsan (
+insert into a11ulsan (
     SELECT * FROM address2 where SIDO = '울산광역시'
 );
 
-CREATE TABLE sejong (
+CREATE TABLE a10sejong (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -635,14 +635,14 @@ CREATE TABLE sejong (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Sejong primary key (ADDRESSID)
+    constraint PK_a10sejong primary key (ADDRESSID)
 );
-insert into sejong (
+insert into a10sejong (
     SELECT * FROM address2 where SIDO = '세종특별자치시'
 );
 
 
-CREATE TABLE otheraddress (
+CREATE TABLE a00otheraddress (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -658,7 +658,7 @@ CREATE TABLE otheraddress (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Otheraddress primary key (ADDRESSID)
+    constraint PK_a00otheraddress primary key (ADDRESSID)
 );
 
 drop table temp;
@@ -669,7 +669,7 @@ insert into temp (
     select BUILDING from address2 where BUILDING = LI group by BUILDING
 );
 select BUILDING from address2 where BUILDING = LI group by BUILDING;
-insert into otheraddress (
+insert into a00otheraddress (
     SELECT * FROM address2 where (
         BUILDING in (select keyword from temp) or
         LI in (select keyword from temp)
@@ -684,7 +684,7 @@ create table temp (
 insert into temp (
     select DORO from address2 where DORO = BUILDING group by DORO
 );
-insert into otheraddress (
+insert into a00otheraddress (
     SELECT * FROM address2 where (
         DORO in (select keyword from temp) or
         BUILDING in (select keyword from temp)
@@ -699,7 +699,7 @@ create table temp (
 insert into temp (
     select DORO from address2 where DORO = DONGLAW group by DORO
 );
-insert into otheraddress (
+insert into a00otheraddress (
     SELECT * FROM address2 where (
         DORO in (select keyword from temp) or
         DONGLAW in (select keyword from temp)
@@ -714,7 +714,7 @@ create table temp (
 insert into temp (
     select BUILDING from address2 where BUILDING = DONGLAW group by BUILDING
 );
-insert into otheraddress (
+insert into a00otheraddress (
     SELECT * FROM address2 where (
         BUILDING in (select keyword from temp) or
         DONGLAW in (select keyword from temp)
@@ -725,11 +725,11 @@ insert into addresskeyword select BUILDING, 4, 5, 0 from address2 where BUILDING
 drop table temp;
 
 
-CREATE TABLE sigunguaddress (
+CREATE TABLE a01sigunguaddress (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
-    EUMMYEON                 VARCHAR2(25),
-    SIGUNGU                  VARCHAR2(18),
+    SIGUNGU                 VARCHAR2(25),
+    EUMMYEON                  VARCHAR2(18),
     DORO                     VARCHAR2(33) NOT NULL,
     ISJIHA                   NUMBER(1) NOT NULL,   
     BUILDINGNUMBER1          NUMBER(5) NOT NULL,   
@@ -741,9 +741,9 @@ CREATE TABLE sigunguaddress (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Sigunguaddress primary key (ADDRESSID)
+    constraint PK_a01sigunguaddress primary key (ADDRESSID)
 );
-insert into sigunguaddress (
+insert into a01sigunguaddress (
     select * from address2 where SIGUNGU in (
         select k from (
             select k, count(*) as c from (
@@ -759,7 +759,7 @@ select k, 1, 0, 1 from (
     ) group by k
 ) where c > 1 and k not in (select keyword from addresskeyword);
 
-CREATE TABLE eummyeonaddress (
+CREATE TABLE a02eummyeonaddress (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -775,9 +775,9 @@ CREATE TABLE eummyeonaddress (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Eummyeonaddress primary key (ADDRESSID)
+    constraint PK_a02eummyeonaddress primary key (ADDRESSID)
 );
-insert into eummyeonaddress (
+insert into a02eummyeonaddress (
     select * from address2 where EUMMYEON in (
         select k from (
             select k, count(*) as c from (
@@ -793,11 +793,11 @@ select k, 2, 0, 2 from (
     ) group by k
 ) where c > 1 and k not in (select keyword from addresskeyword);
 
-CREATE TABLE donglawaddress (
+CREATE TABLE a05donglawaddress (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
-    EUMMYEON                 VARCHAR2(25),
-    SIGUNGU                  VARCHAR2(18),
+    SIGUNGU                 VARCHAR2(25),
+    EUMMYEON                  VARCHAR2(18),
     DORO                     VARCHAR2(33) NOT NULL,
     ISJIHA                   NUMBER(1) NOT NULL,   
     BUILDINGNUMBER1          NUMBER(5) NOT NULL,   
@@ -809,9 +809,9 @@ CREATE TABLE donglawaddress (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Donglawaddress primary key (ADDRESSID)
+    constraint PK_a05donglawaddress primary key (ADDRESSID)
 );
-insert into donglawaddress (
+insert into a05donglawaddress (
     select * from address2 where DONGLAW in (
         select k from (
             select k, count(*) as c from (
@@ -827,11 +827,11 @@ select k, 5, 0, 5 from (
     ) group by k
 ) where c > 1 and k not in (select keyword from addresskeyword);
 
-CREATE TABLE liaddress (
+CREATE TABLE a06liaddress (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
-    EUMMYEON                 VARCHAR2(25),
-    SIGUNGU                  VARCHAR2(18),
+    SIGUNGU                 VARCHAR2(25),
+    EUMMYEON                  VARCHAR2(18),
     DORO                     VARCHAR2(33) NOT NULL,
     ISJIHA                   NUMBER(1) NOT NULL,   
     BUILDINGNUMBER1          NUMBER(5) NOT NULL,   
@@ -843,9 +843,9 @@ CREATE TABLE liaddress (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Liaddress primary key (ADDRESSID)
+    constraint PK_a06liaddress primary key (ADDRESSID)
 );
-insert into liaddress (
+insert into a06liaddress (
     select * from address2 where LI in (
         select k from (
             select k, count(*) as c from (
@@ -861,11 +861,11 @@ select k, 6, 0, 6 from (
     ) group by k
 ) where c > 1 and k not in (select keyword from addresskeyword);
 
-CREATE TABLE doroaddress (
+CREATE TABLE a03doroaddress (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
-    EUMMYEON                 VARCHAR2(25),
-    SIGUNGU                  VARCHAR2(18),
+    SIGUNGU                 VARCHAR2(25),
+    EUMMYEON                  VARCHAR2(18),
     DORO                     VARCHAR2(33) NOT NULL,
     ISJIHA                   NUMBER(1) NOT NULL,   
     BUILDINGNUMBER1          NUMBER(5) NOT NULL,   
@@ -877,9 +877,9 @@ CREATE TABLE doroaddress (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Doroaddress primary key (ADDRESSID)
+    constraint PK_a03doroaddress primary key (ADDRESSID)
 );
-insert into doroaddress (
+insert into a03doroaddress (
     select * from address2 where DORO in (
         select k from (
             select k, count(*) as c from (
@@ -895,7 +895,7 @@ select k, 3, 0, 3 from (
     ) group by k
 ) where c > 1 and k not in (select keyword from addresskeyword);
 
-CREATE TABLE buildingaddress (
+CREATE TABLE a04buildingaddress (
     ZIP                      NUMBER(5) NOT NULL,
     SIDO                     VARCHAR2(21) NOT NULL,
     SIGUNGU                  VARCHAR2(25),
@@ -911,9 +911,9 @@ CREATE TABLE buildingaddress (
     DONG                     VARCHAR2(27),
     LOTNUMBER1               NUMBER(4) NOT NULL,   
     LOTNUMBER2               NUMBER(4) NOT NULL,
-    constraint PK_Buildingaddress primary key (ADDRESSID)
+    constraint PK_a04buildingaddress primary key (ADDRESSID)
 );
-insert into buildingaddress (
+insert into a04buildingaddress (
     select * from address2 where BUILDING in (
         select k from (
             select k, count(*) as c from (
