@@ -396,7 +396,7 @@ CREATE TABLE a21seoul (
     constraint PK_a21seoul primary key (ADDRESSID)
 );
 insert into a21seoul (
-    SELECT * FROM address2 where SIDO = '충청남도'
+    SELECT * FROM address2 where SIDO = '서울특별시'
 );
 
 CREATE TABLE a20jeonbuk (
